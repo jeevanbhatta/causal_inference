@@ -1,7 +1,7 @@
-# Data Transformation Summary: GlobalProtestTracker → GlobalProtestTracker_with_outcomes
+# Data Transformation Summary
 
 ## Overview
-The dataset was transformed from the raw `GlobalProtestTracker.csv` (328 protests) to the processed `GlobalProtestTracker_with_outcomes.csv` (329 protests) by adding 5 new engineered features for causal inference analysis.
+The dataset was transformed from the raw `GlobalProtestTracker.csv` to the processed `GlobalProtestTracker_with_outcomes.csv` by adding 5 new engineered features for causal inference analysis.
 
 ## Changes Made
 
@@ -214,39 +214,3 @@ regime shift → 3
    - `Motivations_category`: 8 unique categories
    - `Key_Participants_category`: 8 unique categories
 3. **Distribution checks**: Each category represents reasonable number of protests
-
----
-
-## Causal Inference Applications
-
-### Treatment Variable
-- **`Duration_days`**: Continuous treatment (also binarized as long vs. short duration)
-
-### Outcome Variable
-- **`outcome_label`**: 4-level ordinal outcome (0=no change, 1=policy change, 2=partial political change, 3=regime shift)
-
-### Confounders (Controlled in Models)
-- **`Peak_Size`**: Protest magnitude (confounder for both treatment and outcome)
-- **`Triggers_category`**: Type of trigger event (confounder)
-- **`Motivations_category`**: Protest motivation (confounder)
-- **`Key_Participants_category`**: Participant organizations (confounder)
-
-### Causal Research Question
-**What is the causal effect of protest duration on the likelihood of policy or political change?**
-
-- **Treatment**: Long-duration protests (>30 days median)
-- **Outcome**: Success (policy change, partial political change, or regime shift)
-- **Methods**: OLS regression, Propensity Score Matching
-
----
-
-## Summary
-
-The transformation from raw to processed data involved:
-1. ✅ **5 new feature engineering steps** creating treatment, outcome, and confounder variables
-2. ✅ **Categorical consolidation** standardizing triggers, motivations, and participants into 8-category schemas
-3. ✅ **Numeric conversion** transforming text-based duration and size into continuous variables
-4. ✅ **Ordinal outcome creation** preserving multi-level success outcomes (not binary)
-5. ✅ **Data quality filtering** removing 3 rows with unresolved ("Active") outcomes
-
-**Result**: A clean, causal-inference-ready dataset with properly engineered treatment, outcome, and confounder variables for regression and matching analysis.
