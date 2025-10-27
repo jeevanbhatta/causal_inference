@@ -1,0 +1,2 @@
+source,n_total,n_treated,n_control,prop_treated,duration_median,ATE_coefficient,ATE_se,ATE_ci_lower,ATE_ci_upper,ATE_weighted_diff,ATT_coefficient,ATT_se,ATT_ci_lower,ATT_ci_upper,covs_in_balance,n_covariates
+processed CSV,329,139,190,0.42249240121580545,30.0,0.1884881172155613,0.08588185631185437,0.019537455703715567,0.35743877872740704,0.18848811721556127,0.1861459192162226,0.08779024456268746,0.013440990257840763,0.35885084817460444,19,22

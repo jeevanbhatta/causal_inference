@@ -1,0 +1,42 @@
+Metric,Value,Interpretation
+Treatment Definition,Duration > 30 days (median),Binary treatment based on median duration
+Sample Size (N),329,After removing missing values
+Treated Units,139 (42.2%),High-duration protests
+Control Units,190 (57.8%),Low-duration protests (baseline)
+,,
+TREATMENT EFFECT,,
+OLS Coefficient,0.1611,Standardized effect: 1 SD duration → 0.16 units on outcome
+OLS P-value,<0.001 ***,Highly significant; very unlikely due to chance
+OLS 95% CI Lower,0.0787,Lower bound of treatment effect range
+OLS 95% CI Upper,0.2434,Upper bound of treatment effect range
+IPTW ATE Coefficient,0.1885,Weighted effect preserving full sample
+IPTW ATE P-value,0.012 *,Significant at α=0.05 level
+IPTW ATE 95% CI Lower,0.0195,Conservative CI lower bound
+IPTW ATE 95% CI Upper,0.3574,Conservative CI upper bound
+PSM ATT Coefficient,0.1597,Reduced sample from 1:1 matching
+PSM ATT P-value,0.125,Confidence interval includes zero (wide)
+,,
+EFFECT SIZE (COHENS D),,
+Cohen's d Estimate,0.2821,Treatment effect = 0.28 standard deviations
+Cohen's d 95% CI Lower,0.0623,95% confidence effect is positive
+Cohen's d 95% CI Upper,0.5019,95% confidence effect is positive
+Effect Size Category,SMALL,By Cohen conventions: 0.2-0.5 is small
+,,
+DESCRIPTIVE STATISTICS,,
+Control Mean Outcome,0.221,"Control: mostly ""no significant change"""
+Treated Mean Outcome,0.439,"Treated: shift toward ""partial change"""
+Raw Difference,0.218,On 0-3 outcome scale
+Percentage Improvement,+98.6%,(0.44-0.22)/0.22 = almost double
+Control Std Dev,0.662,Variability in control group outcomes
+Treated Std Dev,0.902,Variability in treated group outcomes
+Pooled Std Dev,0.772,Average variability across groups
+,,
+PRACTICAL SIGNIFICANCE,,
+Common Language Effect Size (CLES),57.9%,Randomly selected treated > control
+Relative to 50% Chance,+7.9 percentage points,Improvement over fair coin flip (50%)
+Position on 0-3 Scale,"From ""No change"" toward ""Partial change""",Treated move ~7% of 0-3 scale upward
+,,
+SAMPLE BALANCE,,
+Covariates in Balance (|SMD|<0.1),19 / 22,Excellent balance across confounders
+Total Covariates,22,"Main confounders: size, triggers, motivations, participants"
+Balance Achievement Rate,86.4%,Proportion achieving causal adequacy
